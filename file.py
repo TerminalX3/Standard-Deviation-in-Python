@@ -36,18 +36,25 @@ def mean(list):
 def range(list):
   newList = sort(list)
   print(f"The range is {newList[-1] - newList[0]}.")
-  
-list = input("Provide a list of numbers (separated by commas):").split(",")
-options = ["Sort", "Median", "Mean", "Range"]
-for count, ele in enumerate(options, 1):
-  print(f"{count}. {ele}")
-option = input(">>> ")
-match int(option):
-  case 1:
-    sort(list)
-  case 2:
-    median(list)
-  case 3:
-    mean(list)
-  case 4:
-    range(list)
+
+while 1:
+	print("------------------------------------------------------------------------")
+	print("----------Standard Deviation Calculator (with no math functions)--------")
+	print("------------------------------------------------------------------------")
+	
+	list = input("Provide a list of numbers (separated by commas):").split(",")
+	options = ["Sort", "Median", "Mean", "Range"]
+	for count, ele in enumerate(options, 1):
+	  print(f"{count}. {ele}")
+	option = input(">>> ")
+	if option.lower() == "exit":
+		break
+	match int(option):
+		case 1:
+	    		sort(list)
+	  	case 2:
+	    		median(list)
+	  	case 3:
+	    		mean(list)
+	  	case 4:
+	    		range(list)
